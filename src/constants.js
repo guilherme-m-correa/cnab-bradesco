@@ -1,4 +1,4 @@
-export const CNAB_SHIPPING_BRADESCO_ESPECIFICATION = {
+const CNAB_SHIPPING_BRADESCO_ESPECIFICATION = {
   header: {
     registerId: {
       startIndex: 0,
@@ -300,4 +300,8 @@ export const CNAB_SHIPPING_BRADESCO_ESPECIFICATION = {
       type: "number",
     },
   },
+};
+
+module.exports = {
+  CNAB_SHIPPING_BRADESCO_ESPECIFICATION,
 };

@@ -1,8 +1,4 @@
-/*
- * For a detailed explanation regarding each configuration property, visit:
- */
-
-export default {
+module.exports = {
   coverageDirectory: "coverage",
   coverageProvider: "v8",
   coverageReporters: ["json", "text", "lcov", "clover"],

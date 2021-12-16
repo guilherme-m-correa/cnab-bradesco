@@ -1,7 +1,7 @@
-import CnabProcessorFluentAPI from "./cnabProcessorFluentAPI.js";
-import { CNAB_SHIPPING_BRADESCO_ESPECIFICATION } from "./constants.js";
+const CnabProcessorFluentAPI = require("./cnabProcessorFluentAPI.js");
+const { CNAB_SHIPPING_BRADESCO_ESPECIFICATION } = require("./constants.js");
 
-export default class CnabProcessorFacade {
+class CnabProcessorFacade {
   #cnabProcessorFluentAPI;
 
   constructor({ content }) {
@@ -18,3 +18,5 @@ export default class CnabProcessorFacade {
       .build();
   }
 }
+
+module.exports = CnabProcessorFacade;

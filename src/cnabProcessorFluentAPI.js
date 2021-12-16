@@ -1,4 +1,4 @@
-export default class CnabProcessorFluentAPI {
+class CnabProcessorFluentAPI {
   #content;
   #especification;
 
@@ -125,3 +125,5 @@ export default class CnabProcessorFluentAPI {
     return this.#content;
   }
 }
+
+module.exports = CnabProcessorFluentAPI;

@@ -7,7 +7,7 @@ A simple utility library for Bradesco CNAB files.
 ### Node.js
 
 ```js
-import CnabBradesco from "@guilhermematheuscorrea/cnab-bradesco";
+const CnabBradesco = require("@guilhermematheuscorrea/cnab-bradesco");
 
 const data = CnabBradesco.getData({ content: "CNAB FILE CONTENT" });
 ```

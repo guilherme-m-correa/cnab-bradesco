@@ -1,3 +1,3 @@
-import cnabShippingBradescoMock from "./cnabShippingBradesco.js";
+const cnabShippingBradescoMock = require("./cnabShippingBradesco.js");
 
-export { cnabShippingBradescoMock };
+module.exports = { cnabShippingBradescoMock };

@@ -308,4 +308,4 @@ const especification = {
   },
 };
 
-export default { content, especification };
+module.exports = { content, especification };

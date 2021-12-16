@@ -1,7 +1,5 @@
-import { describe, test, expect, beforeAll, jest } from "@jest/globals";
-
-import { cnabShippingBradescoMock } from "./mocks/index.js";
-import CnabProcessorFacade from "../src/cnabProcessorFacade.js";
+const { cnabShippingBradescoMock } = require("./mocks/index.js");
+const CnabProcessorFacade = require("../src/cnabProcessorFacade.js");
 
 describe("CnabProcessorFacade", () => {
   beforeAll(() => {

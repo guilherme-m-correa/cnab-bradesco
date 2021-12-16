@@ -1,3 +1,3 @@
-import CnabProcessorFacade from "./src/cnabProcessorFacade.js";
+const CnabProcessorFacade = require("./src/cnabProcessorFacade.js");
 
-export default CnabProcessorFacade;
+module.exports = CnabProcessorFacade;
