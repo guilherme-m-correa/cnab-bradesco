@@ -1,0 +1,23 @@
+{
+  "name": "@guilhermematheuscorrea/cnab-bradesco",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --config jest.config.js",
+    "test:watch": "NODE_OPTIONS=--experimental-vm-modules npx jest --watchAll --config jest.config.js ",
+    "test:cov": "NODE_OPTIONS=--experimental-vm-modules npx jest --config jest.config.js --coverage "
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guilhermematheuscorrea/cnab-bradesco.git"
+  },
+  "keywords": [],
+  "author": "guilhermematheuscorrea",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
