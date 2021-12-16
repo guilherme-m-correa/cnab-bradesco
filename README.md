@@ -9,5 +9,7 @@ A simple utility library for Bradesco CNAB files.
 ```js
 const CnabBradesco = require("@guilhermematheuscorrea/cnab-bradesco");
 
-const data = CnabBradesco.getData({ content: "CNAB FILE CONTENT" });
+const cnabBradesco = new CnabBradesco({ content: "CNAB CONTENT" });
+
+const data = cnabBradesco.getData();
 ```
