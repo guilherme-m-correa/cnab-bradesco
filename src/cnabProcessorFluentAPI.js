@@ -121,6 +121,115 @@ class CnabProcessorFluentAPI {
     return this;
   }
 
+  #parseDate(dateStr) {
+    const day = dateStr.slice(0, 2);
+    const month = dateStr.slice(2, 4);
+    const year = dateStr.slice(4, 8);
+
+    const fullYear = `20${year}`;
+
+    const value = `${fullYear}-${month}-${day}`;
+
+    const date = new Date(value);
+
+    if (isNaN(date.getTime())) {
+      return null;
+    }
+
+    return date.toISOString();
+  }
+
+  #parseNumber(numberStr) {
+    const number = parseInt(numberStr);
+
+    if (isNaN(number)) {
+      return null;
+    }
+
+    return number;
+  }
+
+  parseFields() {
+    const header = this.#content.header;
+
+    const headerParsed = Object.keys(header).reduce((acc, key) => {
+      const { type } = this.#especification.header[key];
+
+      if (type === "date") {
+        const value = this.#parseDate(header[key]);
+
+        return {
+          ...acc,
+          [key]: value,
+        };
+      }
+
+      if (type === "number") {
+        const value = this.#parseNumber(header[key]);
+
+        return {
+          ...acc,
+          [key]: value,
+        };
+      }
+
+      return {
+        ...acc,
+        [key]: header[key],
+      };
+    }, {});
+
+    const transactions = this.#content.transactions;
+
+    const transactionsParsed = transactions.map((transaction) => {
+      const transactionParsed = Object.keys(transaction).reduce((acc, key) => {
+        const { type } = this.#especification.transactions[key];
+
+        if (type === "date") {
+          const value = this.#parseDate(transaction[key]);
+
+          return {
+            ...acc,
+            [key]: value,
+          };
+        }
+
+        if (type === "number") {
+          const value = this.#parseNumber(transaction[key]);
+
+          return {
+            ...acc,
+            [key]: value,
+          };
+        }
+
+        return {
+          ...acc,
+          [key]: transaction[key],
+        };
+      }, {});
+
+      return transactionParsed;
+    });
+
+    const trailler = this.#content.trailler;
+
+    const traillerParsed = Object.keys(trailler).reduce((acc, key) => {
+      return {
+        ...acc,
+        [key]: this.#parseNumber(trailler[key]),
+      };
+    }, {});
+
+    this.#content = {
+      header: headerParsed,
+      transactions: transactionsParsed,
+      trailler: traillerParsed,
+    };
+
+    return this;
+  }
+
   build() {
     return this.#content;
   }

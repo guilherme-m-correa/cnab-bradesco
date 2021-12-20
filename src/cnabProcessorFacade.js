@@ -15,6 +15,7 @@ class CnabProcessorFacade {
     return this.#cnabProcessorFluentAPI
       .extractData()
       .removeEmptySpaces()
+      .parseFields()
       .build();
   }
 }

@@ -125,7 +125,7 @@ const CNAB_SHIPPING_BRADESCO_ESPECIFICATION = {
     ourNumber: {
       startIndex: 70,
       endIndex: 81,
-      type: "number",
+      type: "string",
     },
     ourNumberDigit: {
       startIndex: 81,
@@ -170,7 +170,7 @@ const CNAB_SHIPPING_BRADESCO_ESPECIFICATION = {
     documentNumber: {
       startIndex: 110,
       endIndex: 120,
-      type: "number",
+      type: "string",
     },
     titleDueDate: {
       startIndex: 120,
