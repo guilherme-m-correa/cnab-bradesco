@@ -1,5 +1,5 @@
-const { cnabShippingBradescoMock } = require("./mocks/index.js");
-const CnabProcessorFluentAPI = require("../src/CnabProcessorFluentAPI.js");
+const { cnabShippingBradescoMock } = require("./mocks");
+const CnabProcessorFluentAPI = require("../src/CnabProcessorFluentAPI");
 
 describe("CnabProcessorFluentAPI", () => {
   beforeAll(() => {

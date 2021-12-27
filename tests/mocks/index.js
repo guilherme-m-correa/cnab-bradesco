@@ -1,3 +1,4 @@
-const cnabShippingBradescoMock = require("./cnabShippingBradesco.js");
+const cnabShippingBradescoMock = require("./cnabShippingBradesco");
+const cnabReturnBradescoMock = require("./cnabReturnBradesco");
 
-module.exports = { cnabShippingBradescoMock };
+module.exports = { cnabShippingBradescoMock, cnabReturnBradescoMock };

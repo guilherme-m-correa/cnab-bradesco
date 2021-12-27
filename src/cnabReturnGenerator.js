@@ -13,18 +13,26 @@ class CnabReturnGenerator {
 
   #formatField(value, fieldEspecification) {
     if (fieldEspecification.type === "date") {
+      if (!value) {
+        return "".padEnd(6, " ");
+      }
+
       const date = new Date(value);
 
       if (isNaN(date.getTime())) {
-        return "000000";
+        return "".padEnd(6, " ");
       }
 
-      const day = date.getDate();
-      const month = date.getMonth() + 1;
-      const fullYear = date.getFullYear();
-      const partialYear = fullYear.toString().slice(1, -1);
+      const utcDate = new Date(
+        date.getTime() + date.getTimezoneOffset() * 60000
+      );
 
-      return `${day}${month}${partialYear}`;
+      const day = utcDate.getDate();
+      const month = utcDate.getMonth() + 1;
+      const fullYear = utcDate.getFullYear();
+      const partialYear = fullYear.toString().slice(2, 4);
+
+      return `${day.toString().padStart(2, "0")}${month}${partialYear}`;
     }
 
     if (fieldEspecification.type === "number") {
@@ -58,7 +66,7 @@ class CnabReturnGenerator {
 
   generate() {
     let header = "".padEnd(400, " ");
-
+    console.log("BEFORE: header.length", header.length);
     for (const [key, value] of Object.entries(this.#header)) {
       const fieldEspecification =
         CNAB_RETURN_BRADESCO_ESPECIFICATION.header[key];
@@ -68,7 +76,9 @@ class CnabReturnGenerator {
       header =
         header.slice(0, startIndex) +
         this.#formatField(value, fieldEspecification) +
-        header.slice(endIndex + 1);
+        header.slice(endIndex);
+
+      console.log("AFTER: header.length", header.length);
     }
 
     const transactions = this.#transactions.map((transaction) => {
@@ -97,13 +107,15 @@ class CnabReturnGenerator {
         },
       ];
 
+      console.log("BEFORE: transactionLine.length", transactionLine.length);
+
       zeros.forEach((zero) => {
-        const zeroStr = "".padStart(zero.endIndex - zero.startIndex + 1, "0");
+        const zeroStr = "".padStart(zero.endIndex - zero.startIndex, "0");
 
         transactionLine =
           transactionLine.slice(0, zero.startIndex) +
           zeroStr +
-          transactionLine.slice(zero.endIndex + 1);
+          transactionLine.slice(zero.endIndex);
       });
 
       for (const [key, value] of Object.entries(transaction)) {
@@ -115,14 +127,15 @@ class CnabReturnGenerator {
         transactionLine =
           transactionLine.slice(0, startIndex) +
           this.#formatField(value, fieldEspecification) +
-          transactionLine.slice(endIndex + 1);
+          transactionLine.slice(endIndex);
       }
+      console.log("AFTER: transactionLine.length", transactionLine.length);
 
       return transactionLine;
     });
 
     let trailler = "".padEnd(400, " ");
-
+    console.log("BEFORE: trailler.length", trailler.length);
     for (const [key, value] of Object.entries(this.#trailler)) {
       const fieldEspecification =
         CNAB_RETURN_BRADESCO_ESPECIFICATION.trailler[key];
@@ -132,7 +145,8 @@ class CnabReturnGenerator {
       trailler =
         trailler.slice(0, startIndex) +
         this.#formatField(value, fieldEspecification) +
-        trailler.slice(endIndex + 1);
+        trailler.slice(endIndex);
+      console.log("AFTER: trailler.length", trailler.length);
     }
 
     return `${header}\n${transactions.join("\n")}\n${trailler}`;

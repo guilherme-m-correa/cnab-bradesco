@@ -518,12 +518,12 @@ const CNAB_RETURN_BRADESCO_ESPECIFICATION = {
     paymentOrigin: {
       startIndex: 301,
       endIndex: 304,
-      type: "number",
+      type: "string",
     },
     isCheck: {
       startIndex: 314,
       endIndex: 318,
-      type: "number",
+      type: "string",
     },
     rejectReason: {
       startIndex: 318,
@@ -533,7 +533,7 @@ const CNAB_RETURN_BRADESCO_ESPECIFICATION = {
     registryNumber: {
       startIndex: 368,
       endIndex: 370,
-      type: "number",
+      type: "string",
     },
     protocolNumber: {
       startIndex: 370,
@@ -580,7 +580,7 @@ const CNAB_RETURN_BRADESCO_ESPECIFICATION = {
     bankNoticeNumber: {
       startIndex: 39,
       endIndex: 47,
-      type: "string",
+      type: "number",
     },
     ocurrence02RecordsQtd: {
       startIndex: 57,
