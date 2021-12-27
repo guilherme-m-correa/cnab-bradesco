@@ -1,13 +1,18 @@
-const CnabProcessorFluentAPI = require("./cnabProcessorFluentAPI.js");
-const { CNAB_SHIPPING_BRADESCO_ESPECIFICATION } = require("./constants.js");
-
+const CnabProcessorFluentAPI = require("./cnabProcessorFluentAPI");
+const {
+  CNAB_RETURN_BRADESCO_ESPECIFICATION,
+  CNAB_SHIPPING_BRADESCO_ESPECIFICATION,
+} = require("./constants");
 class CnabProcessorFacade {
   #cnabProcessorFluentAPI;
 
-  constructor({ content }) {
+  constructor({ content, cnabType = "shipping" }) {
     this.#cnabProcessorFluentAPI = new CnabProcessorFluentAPI({
       content,
-      especification: CNAB_SHIPPING_BRADESCO_ESPECIFICATION,
+      especification:
+        cnabType === "return"
+          ? CNAB_RETURN_BRADESCO_ESPECIFICATION
+          : CNAB_SHIPPING_BRADESCO_ESPECIFICATION,
     });
   }
 

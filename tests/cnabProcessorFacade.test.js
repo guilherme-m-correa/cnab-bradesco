@@ -10,6 +10,7 @@ describe("CnabProcessorFacade", () => {
   test("#getData", () => {
     const cnabProcessorFacade = new CnabProcessorFacade({
       content: cnabShippingBradescoMock.content,
+      especification: cnabShippingBradescoMock.especification,
     });
 
     const getDataFunction = jest.spyOn(

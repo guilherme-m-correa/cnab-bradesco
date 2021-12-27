@@ -1,3 +1,4 @@
-const CnabProcessorFacade = require("./src/cnabProcessorFacade.js");
+const CnabProcessorFacade = require("./src/cnabProcessorFacade");
+const CnabReturnGenerator = require("./src/cnabReturnGenerator");
 
-module.exports = CnabProcessorFacade;
+module.exports = { CnabProcessorFacade, CnabReturnGenerator };

@@ -106,12 +106,12 @@ const especification = {
     beneficiaryId: {
       startIndex: 20,
       endIndex: 37,
-      type: "number",
+      type: "string",
     },
     participantControlNumber: {
       startIndex: 37,
       endIndex: 62,
-      type: "number",
+      type: "string",
     },
     debitBankCode: {
       startIndex: 62,
@@ -131,14 +131,14 @@ const especification = {
     ourNumber: {
       startIndex: 70,
       endIndex: 81,
-      type: "string",
+      type: "number",
     },
     ourNumberDigit: {
       startIndex: 81,
       endIndex: 82,
       type: "string",
     },
-    discount: {
+    discountPerDay: {
       startIndex: 82,
       endIndex: 92,
       type: "number",
@@ -146,7 +146,7 @@ const especification = {
     billingEmissionCondition: {
       startIndex: 92,
       endIndex: 93,
-      type: "string",
+      type: "number",
     },
     automaticDebitSlipEmissionId: {
       startIndex: 93,
@@ -276,12 +276,12 @@ const especification = {
     payerZipCode: {
       startIndex: 326,
       endIndex: 331,
-      type: "string",
+      type: "number",
     },
     payerZipCodeSuffix: {
       startIndex: 331,
       endIndex: 334,
-      type: "string",
+      type: "number",
     },
     guarantorOrSecondMessage: {
       startIndex: 334,
