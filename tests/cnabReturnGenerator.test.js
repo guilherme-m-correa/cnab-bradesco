@@ -98,8 +98,6 @@ describe("CnabReturnGenerator", () => {
 
     const result = cnabReturnGenerator.generate();
 
-    console.log(result);
-
     expect(result).toStrictEqual(expected);
   });
 });

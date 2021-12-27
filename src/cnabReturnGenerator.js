@@ -66,7 +66,6 @@ class CnabReturnGenerator {
 
   generate() {
     let header = "".padEnd(400, " ");
-    console.log("BEFORE: header.length", header.length);
     for (const [key, value] of Object.entries(this.#header)) {
       const fieldEspecification =
         CNAB_RETURN_BRADESCO_ESPECIFICATION.header[key];
@@ -77,8 +76,6 @@ class CnabReturnGenerator {
         header.slice(0, startIndex) +
         this.#formatField(value, fieldEspecification) +
         header.slice(endIndex);
-
-      console.log("AFTER: header.length", header.length);
     }
 
     const transactions = this.#transactions.map((transaction) => {
@@ -107,8 +104,6 @@ class CnabReturnGenerator {
         },
       ];
 
-      console.log("BEFORE: transactionLine.length", transactionLine.length);
-
       zeros.forEach((zero) => {
         const zeroStr = "".padStart(zero.endIndex - zero.startIndex, "0");
 
@@ -129,13 +124,11 @@ class CnabReturnGenerator {
           this.#formatField(value, fieldEspecification) +
           transactionLine.slice(endIndex);
       }
-      console.log("AFTER: transactionLine.length", transactionLine.length);
 
       return transactionLine;
     });
 
     let trailler = "".padEnd(400, " ");
-    console.log("BEFORE: trailler.length", trailler.length);
     for (const [key, value] of Object.entries(this.#trailler)) {
       const fieldEspecification =
         CNAB_RETURN_BRADESCO_ESPECIFICATION.trailler[key];
@@ -146,7 +139,6 @@ class CnabReturnGenerator {
         trailler.slice(0, startIndex) +
         this.#formatField(value, fieldEspecification) +
         trailler.slice(endIndex);
-      console.log("AFTER: trailler.length", trailler.length);
     }
 
     return `${header}\n${transactions.join("\n")}\n${trailler}`;
