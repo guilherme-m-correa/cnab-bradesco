@@ -125,7 +125,7 @@ const CNAB_SHIPPING_BRADESCO_ESPECIFICATION = {
     ourNumber: {
       startIndex: 70,
       endIndex: 81,
-      type: "number",
+      type: "string",
     },
     ourNumberDigit: {
       startIndex: 81,
@@ -676,232 +676,312 @@ const CNAB_RETURN_BRADESCO_ESPECIFICATION = {
 };
 
 const CNAB_444_ESPECIFICATION = {
-  header: {
-    registerId: {
-      startIndex: 0,
-      endIndex: 1,
-      type: "number",
+    header: {
+      registerId: {
+        startIndex: 0,
+        endIndex: 1,
+        type: "number",
+      },
+      shippingFileId: {
+        startIndex: 1,
+        endIndex: 2,
+        type: "number",
+      },
+      shippingLiteral: {
+        startIndex: 2,
+        endIndex: 9,
+        type: "string",
+      },
+      serviceCode: {
+        startIndex: 9,
+        endIndex: 11,
+        type: "number",
+      },
+      serviceLiteral: {
+        startIndex: 11,
+        endIndex: 26,
+        type: "string",
+      },
+      companyCode: {
+        startIndex: 26,
+        endIndex: 46,
+        type: "number",
+      },
+      companyName: {
+        startIndex: 46,
+        endIndex: 76,
+        type: "string",
+      },
+      bankCode: {
+        startIndex: 76,
+        endIndex: 79,
+        type: "number",
+      },
+      bankName: {
+        startIndex: 79,
+        endIndex: 94,
+        type: "string",
+      },
+      recordDate: {
+        startIndex: 94,
+        endIndex: 100,
+        type: "date",
+      },
+      systemId: {
+        startIndex: 108,
+        endIndex: 110,
+        type: "string",
+      },
+      shippingSequencialId: {
+        startIndex: 110,
+        endIndex: 117,
+        type: "number",
+      },
+      sequencialId: {
+        startIndex: 394,
+        endIndex: 400,
+        type: "number",
+      },
     },
-    shippingFileId: {
-      startIndex: 1,
-      endIndex: 2,
-      type: "number",
+    transactions: {
+      registerId: {
+        startIndex: 0,
+        endIndex: 1,
+        type: "number",
+      },
+      debitAgency: {
+        startIndex: 1,
+        endIndex: 6,
+        type: "number",
+      },
+      debitAgencyDigit: {
+        startIndex: 6,
+        endIndex: 7,
+        type: "string",
+      },
+      accountLedger: {
+        startIndex: 7,
+        endIndex: 12,
+        type: "number",
+      },
+      account: {
+        startIndex: 12,
+        endIndex: 19,
+        type: "number",
+      },
+      accountDigit: {
+        startIndex: 19,
+        endIndex: 20,
+        type: "string",
+      },
+      beneficiaryId: {
+        startIndex: 20,
+        endIndex: 37,
+        type: "string",
+      },
+      participantControlNumber: {
+        startIndex: 37,
+        endIndex: 62,
+        type: "string",
+      },
+      debitBankCode: {
+        startIndex: 62,
+        endIndex: 65,
+        type: "number",
+      },
+      fineField: {
+        startIndex: 65,
+        endIndex: 66,
+        type: "number",
+      },
+      finePercentage: {
+        startIndex: 66,
+        endIndex: 70,
+        type: "number",
+      },
+      ourNumber: {
+        startIndex: 70,
+        endIndex: 81,
+        type: "string",
+      },
+      ourNumberDigit: {
+        startIndex: 81,
+        endIndex: 82,
+        type: "string",
+      },
+      discountPerDay: {
+        startIndex: 82,
+        endIndex: 92,
+        type: "number",
+      },
+      billingEmissionCondition: {
+        startIndex: 92,
+        endIndex: 93,
+        type: "number",
+      },
+      automaticDebitSlipEmissionId: {
+        startIndex: 93,
+        endIndex: 94,
+        type: "string",
+      },
+      operationId: {
+        startIndex: 94,
+        endIndex: 104,
+        type: "string",
+      },
+      creditApportionmentId: {
+        startIndex: 104,
+        endIndex: 105,
+        type: "string",
+      },
+      addressingForAutomaticDebitNotice: {
+        startIndex: 105,
+        endIndex: 106,
+        type: "number",
+      },
+      ocorrenceId: {
+        startIndex: 109,
+        endIndex: 110,
+        type: "number",
+      },
+      documentNumber: {
+        startIndex: 110,
+        endIndex: 120,
+        type: "string",
+      },
+      titleDueDate: {
+        startIndex: 120,
+        endIndex: 126,
+        type: "date",
+      },
+      titleValue: {
+        startIndex: 126,
+        endIndex: 139,
+        type: "number",
+      },
+      billingBank: {
+        startIndex: 139,
+        endIndex: 142,
+        type: "number",
+      },
+      depositAgency: {
+        startIndex: 142,
+        endIndex: 147,
+        type: "number",
+      },
+      titleType: {
+        startIndex: 147,
+        endIndex: 149,
+        type: "number",
+      },
+      id: {
+        startIndex: 149,
+        endIndex: 150,
+        type: "string",
+      },
+      titleEmissionDate: {
+        startIndex: 150,
+        endIndex: 156,
+        type: "date",
+      },
+      firstInstruction: {
+        startIndex: 156,
+        endIndex: 158,
+        type: "number",
+      },
+      secondInstruction: {
+        startIndex: 158,
+        endIndex: 160,
+        type: "number",
+      },
+      arrearsPerDayValue: {
+        startIndex: 160,
+        endIndex: 173,
+        type: "number",
+      },
+      discountLimitDate: {
+        startIndex: 173,
+        endIndex: 179,
+        type: "date",
+      },
+      discountValue: {
+        startIndex: 179,
+        endIndex: 192,
+        type: "number",
+      },
+      iofValue: {
+        startIndex: 192,
+        endIndex: 205,
+        type: "number",
+      },
+      rebateValue: {
+        startIndex: 205,
+        endIndex: 218,
+        type: "number",
+      },
+      payerType: {
+        startIndex: 218,
+        endIndex: 220,
+        type: "number",
+      },
+      payerDocumentNumber: {
+        startIndex: 220,
+        endIndex: 234,
+        type: "string",
+      },
+      payerName: {
+        startIndex: 234,
+        endIndex: 274,
+        type: "string",
+      },
+      payerFullAddress: {
+        startIndex: 274,
+        endIndex: 314,
+        type: "string",
+      },
+      firstMessage: {
+        startIndex: 314,
+        endIndex: 326,
+        type: "string",
+      },
+      payerZipCode: {
+        startIndex: 326,
+        endIndex: 331,
+        type: "number",
+      },
+      payerZipCodeSuffix: {
+        startIndex: 331,
+        endIndex: 334,
+        type: "number",
+      },
+      guarantorOrSecondMessage: {
+        startIndex: 334,
+        endIndex: 394,
+        type: "string",
+      },
+      sequencialId: {
+        startIndex: 394,
+        endIndex: 400,
+        type: "number",
+      },
+      key: {
+        startIndex: 400,
+        endIndex: 444,
+        type: "string",
+      }
     },
-    shippingLiteral: {
-      startIndex: 2,
-      endIndex: 9,
-      type: "string",
-    },
-    serviceCode: {
-      startIndex: 9,
-      endIndex: 11,
-      type: "number",
-    },
-    serviceLiteral: {
-      startIndex: 11,
-      endIndex: 26,
-      type: "string",
-    },
-    companyCode: {
-      startIndex: 26,
-      endIndex: 46,
-      type: "number",
-    },
-    companyName: {
-      startIndex: 46,
-      endIndex: 76,
-      type: "string",
-    },
-    bankCode: {
-      startIndex: 76,
-      endIndex: 79,
-      type: "number",
-    },
-    bankName: {
-      startIndex: 79,
-      endIndex: 94,
-      type: "string",
-    },
-    recordDate: {
-      startIndex: 94,
-      endIndex: 100,
-      type: "date",
-    },
-    systemId: {
-      startIndex: 108,
-      endIndex: 110,
-      type: "string",
-    },
-    shippingSequencialId: {
-      startIndex: 110,
-      endIndex: 117,
-      type: "number",
-    },
-    sequencialId: {
-      startIndex: 394,
-      endIndex: 400,
-      type: "number",
-    },
-  },
-  transactions: {
-    registerId: {
-      startIndex: 0,
-      endIndex: 1,
-      type: "number",
-    },
-    bankNumber: {
-      startIndex: 62,
-      endIndex: 65,
-      type: "string",
-    },
-    titleId: {
-      startIndex: 70,
-      endIndex: 81,
-      type: "string",
-    },
-    ourNumber: {
-      startIndex: 81,
-      endIndex: 82,
-      type: "string",
-    },
-    titlePaidValue: {
-      startIndex: 82,
-      endIndex: 92,
-      type: "number",
-    },
-    titlePaidDate: {
-      startIndex: 94,
-      endIndex: 100,
-      type: "date",
-    },
-    titleDocumentNumber: {
-      startIndex: 110,
-      endIndex: 120,
-      type: "string",
-    },
-    titleDueDate: {
-      startIndex: 120,
-      endIndex: 126,
-      type: "date",
-    },
-    titleValue: {
-      startIndex: 126,
-      endIndex: 139,
-      type: "number",
-    },
-    billingBank: {
-      startIndex: 139,
-      endIndex: 142,
-      type: "string",
-    },
-    depositAgency: {
-      startIndex: 142,
-      endIndex: 147,
-      type: "string",
-    },
-    titleType: {
-      startIndex: 147,
-      endIndex: 149,
-      type: "string",
-    },
-    titleDate: {
-      startIndex: 151,
-      endIndex: 156,
-      type: "date",
-    },
-    firstInstruction: {
-      startIndex: 156,
-      endIndex: 158,
-      type: "string",
-    },
-    secondInstruction: {
-      startIndex: 158,
-      endIndex: 159,
-      type: "string",
-    },
-    assignorPersonType: {
-      startIndex: 159,
-      endIndex: 161,
-      type: "string",
-    },
-    assignmentTermNumber: {
-      startIndex: 161,
-      endIndex: 173,
-      type: "string",
-    },
-    titleAquisitionValue: {
-      startIndex: 192,
-      endIndex: 205,
-      type: "number",
-    },
-    titleDiscountValue: {
-      startIndex: 205,
-      endIndex: 218,
-      type: "number",
-    },
-    payerType: {
-      startIndex: 218,
-      endIndex: 220,
-      type: "string",
-    },
-    payerDocumentNumber: {
-      startIndex: 220,
-      endIndex: 234,
-      type: "string",
-    },
-    payerName: {
-      startIndex: 234,
-      endIndex: 274,
-      type: "string",
-    },
-    payerAddress: {
-      startIndex: 274,
-      endIndex: 314,
-      type: "string",
-    },
-    duplicateNumber: {
-      startIndex: 314,
-      endIndex: 323,
-      type: "string",
-    },
-    duplicateSerie: {
-      startIndex: 323,
-      endIndex: 326,
-      type: "string",
-    },
-    payerZipCode: {
-      startIndex: 326,
-      endIndex: 334,
-      type: "string",
-    },
-    assignor: {
-      startIndex: 334,
-      endIndex: 394,
-      type: "string",
-    },
-    key: {
-      startIndex: 394,
-      endIndex: 438,
-      type: "string",
-    },
-    sequencialId: {
-      startIndex: 438,
-      endIndex: 444,
-      type: "number",
-    },
-  },
-  trailler: {
-    registerId: {
-      startIndex: 0,
-      endIndex: 1,
-      type: "number",
-    },
-    sequencialId: {
-      startIndex: 394,
-      endIndex: 400,
-      type: "number",
-    },
-  },
+    trailler: {
+      registerId: {
+        startIndex: 0,
+        endIndex: 1,
+        type: "number",
+      },
+      sequencialId: {
+        startIndex: 394,
+        endIndex: 400,
+        type: "number",
+      },
+    }
 };
 
 module.exports = {
