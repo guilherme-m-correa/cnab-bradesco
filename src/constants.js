@@ -675,7 +675,237 @@ const CNAB_RETURN_BRADESCO_ESPECIFICATION = {
   },
 };
 
+const CNAB_444_ESPECIFICATION = {
+  header: {
+    registerId: {
+      startIndex: 0,
+      endIndex: 1,
+      type: "number",
+    },
+    shippingFileId: {
+      startIndex: 1,
+      endIndex: 2,
+      type: "number",
+    },
+    shippingLiteral: {
+      startIndex: 2,
+      endIndex: 9,
+      type: "string",
+    },
+    serviceCode: {
+      startIndex: 9,
+      endIndex: 11,
+      type: "number",
+    },
+    serviceLiteral: {
+      startIndex: 11,
+      endIndex: 26,
+      type: "string",
+    },
+    companyCode: {
+      startIndex: 26,
+      endIndex: 46,
+      type: "number",
+    },
+    companyName: {
+      startIndex: 46,
+      endIndex: 76,
+      type: "string",
+    },
+    bankCode: {
+      startIndex: 76,
+      endIndex: 79,
+      type: "number",
+    },
+    bankName: {
+      startIndex: 79,
+      endIndex: 94,
+      type: "string",
+    },
+    recordDate: {
+      startIndex: 94,
+      endIndex: 100,
+      type: "date",
+    },
+    systemId: {
+      startIndex: 108,
+      endIndex: 110,
+      type: "string",
+    },
+    shippingSequencialId: {
+      startIndex: 110,
+      endIndex: 117,
+      type: "number",
+    },
+    sequencialId: {
+      startIndex: 394,
+      endIndex: 400,
+      type: "number",
+    },
+  },
+  transactions: {
+    registerId: {
+      startIndex: 0,
+      endIndex: 1,
+      type: "number",
+    },
+    bankNumber: {
+      startIndex: 62,
+      endIndex: 65,
+      type: "string",
+    },
+    titleId: {
+      startIndex: 70,
+      endIndex: 81,
+      type: "string",
+    },
+    ourNumber: {
+      startIndex: 81,
+      endIndex: 82,
+      type: "string",
+    },
+    titlePaidValue: {
+      startIndex: 82,
+      endIndex: 92,
+      type: "number",
+    },
+    titlePaidDate: {
+      startIndex: 94,
+      endIndex: 100,
+      type: "date",
+    },
+    titleDocumentNumber: {
+      startIndex: 110,
+      endIndex: 120,
+      type: "string",
+    },
+    titleDueDate: {
+      startIndex: 120,
+      endIndex: 126,
+      type: "date",
+    },
+    titleValue: {
+      startIndex: 126,
+      endIndex: 139,
+      type: "number",
+    },
+    billingBank: {
+      startIndex: 139,
+      endIndex: 142,
+      type: "string",
+    },
+    depositAgency: {
+      startIndex: 142,
+      endIndex: 147,
+      type: "string",
+    },
+    titleType: {
+      startIndex: 147,
+      endIndex: 149,
+      type: "string",
+    },
+    titleDate: {
+      startIndex: 151,
+      endIndex: 156,
+      type: "date",
+    },
+    firstInstruction: {
+      startIndex: 156,
+      endIndex: 158,
+      type: "string",
+    },
+    secondInstruction: {
+      startIndex: 158,
+      endIndex: 159,
+      type: "string",
+    },
+    assignorPersonType: {
+      startIndex: 159,
+      endIndex: 161,
+      type: "string",
+    },
+    assignmentTermNumber: {
+      startIndex: 161,
+      endIndex: 173,
+      type: "string",
+    },
+    titleAquisitionValue: {
+      startIndex: 192,
+      endIndex: 205,
+      type: "number",
+    },
+    titleDiscountValue: {
+      startIndex: 205,
+      endIndex: 218,
+      type: "number",
+    },
+    payerType: {
+      startIndex: 218,
+      endIndex: 220,
+      type: "string",
+    },
+    payerDocumentNumber: {
+      startIndex: 220,
+      endIndex: 234,
+      type: "string",
+    },
+    payerName: {
+      startIndex: 234,
+      endIndex: 274,
+      type: "string",
+    },
+    payerAddress: {
+      startIndex: 274,
+      endIndex: 314,
+      type: "string",
+    },
+    duplicateNumber: {
+      startIndex: 314,
+      endIndex: 323,
+      type: "string",
+    },
+    duplicateSerie: {
+      startIndex: 323,
+      endIndex: 326,
+      type: "string",
+    },
+    payerZipCode: {
+      startIndex: 326,
+      endIndex: 334,
+      type: "string",
+    },
+    assignor: {
+      startIndex: 334,
+      endIndex: 394,
+      type: "string",
+    },
+    key: {
+      startIndex: 394,
+      endIndex: 438,
+      type: "string",
+    },
+    sequencialId: {
+      startIndex: 438,
+      endIndex: 444,
+      type: "number",
+    },
+  },
+  trailler: {
+    registerId: {
+      startIndex: 0,
+      endIndex: 1,
+      type: "number",
+    },
+    sequencialId: {
+      startIndex: 394,
+      endIndex: 400,
+      type: "number",
+    },
+  },
+};
+
 module.exports = {
   CNAB_SHIPPING_BRADESCO_ESPECIFICATION,
   CNAB_RETURN_BRADESCO_ESPECIFICATION,
+  CNAB_444_ESPECIFICATION,
 };
