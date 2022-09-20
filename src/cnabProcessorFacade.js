@@ -18,7 +18,7 @@ class CnabProcessorFacade {
       especification = CNAB_SHIPPING_BRADESCO_ESPECIFICATION;
     }
 
-    if ((cnabType = "444")) {
+    if (cnabType === "444") {
       especification = CNAB_444_ESPECIFICATION;
     }
 
